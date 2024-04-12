@@ -3,13 +3,41 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { msalConfig } from "./auth-config";
+import { EventType, PublicClientApplication } from '@azure/msal-browser';
+import { MsalProvider } from '@azure/msal-react';
+
+const msInstance = new PublicClientApplication( msalConfig );
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+/**
+* MSAL should be instantiated outside of the component tree to prevent it from being re-instantiated on re-renders.
+* For more, visit: https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-react/docs/getting-started.md
+*/
+const msalInstance = new PublicClientApplication(msalConfig);
+
+// Default to using the first account if no account is active on page load
+// if (!msalInstance.getActiveAccount() && msalInstance.getAllAccounts().length > 0) {
+//     // Account selection logic is app dependent. Adjust as needed for different use cases.
+//     msalInstance.setActiveAccount(msalInstance.getAllAccounts()[0]);
+// }
+
+// msalInstance.addEventCallback((event) => {
+//     if (
+//         event.eventType === EventType.LOGIN_SUCCESS  &&
+//         event?.payload?.account
+//     ) {
+//         msalInstance.setActiveAccount(event.payload.account);
+//     }
+// });
 root.render(
   <React.StrictMode>
-    <App />
+    <MsalProvider instance={msInstance}>
+      <App instance={ msalInstance } />
+      </MsalProvider>
   </React.StrictMode>
 );
 

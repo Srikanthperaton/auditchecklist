@@ -1,0 +1,9 @@
+{
+  "azure.tenant": "e2183bdb-a58a-487a-91df-b2377ff51d75",
+  "azure.cloud": "AzureUSGovernment",
+  "azureResourceGroups.selectedSubscriptions": [],
+  "security.workspace.trust.untrustedFiles": "open",
+  "microsoft-sovereign-cloud.environment": "USGovernment",
+  "appService.defaultWebAppToDeploy": "/subscriptions/e417adc5-3cc6-43af-bdd8-8343d6b269c0/resourceGroups/GPD-SIPC-RG/providers/Microsoft.Web/sites/auditreporttooldev",
+  "appService.deploySubpath": "build"
+}

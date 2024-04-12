@@ -1,0 +1,545 @@
+{
+  "id": null,
+  "name": "examinerChecklist",
+  "memberName": "A5 SECURITIES LLC",
+  "secNumber": "8-69944",
+  "periodEndDate": null,
+  "filing": null,
+  "examiner": null,
+  "submittedDate": null,
+  "sections": [
+    {
+      "name": "1.Oath or Affirmation",
+      "included": null,
+      "isVisible": true,
+      "questions": [
+        {
+          "id": 1,
+          "title": "States the correct Member Name; the Date corresponds to Period Ending or later",
+          "control": "checkbox",
+          "answer": null,
+          "row": 1
+        },
+        {
+          "id": 2,
+          "title": "Signed",
+          "control": "checkbox",
+          "answer": null,
+          "row": 2
+        },
+        {
+          "id": 3,
+          "title": "Notarized",
+          "control": "checkbox",
+          "answer": null,
+          "row": 2
+        },
+        {
+          "id": 4,
+          "title": "Includes statement as to why no Independent Accountant's Reports are included",
+          "control": "checkbox",
+          "answer": null,
+          "row": 3
+        }
+      ]
+    },
+    {
+      "name": "2.Financial Report",
+      "included": null,
+      "isVisible": true,
+      "subSections": [
+        {
+          "name": "Independent Accountant's Report ",
+          "included": "checkbox",
+          "auditor": "textbox",
+          "isVisible": true,
+          "questions": [
+            {
+              "id": 5,
+              "title": "1.Refers to the correct Financial Statements (Member Name and Period Ending)",
+              "control": "checkbox",
+              "answer": null,
+              "row": 1,
+              "index":0
+              
+            },
+            {
+              "id": 6,
+              "title": "2.Dated",
+              "control": "checkbox",
+              "answer": null,
+              "row": 0,
+              "index":0
+            },
+            {
+              "id": 7,
+              "title": "City and state indicated",
+              "control": "checkbox",
+              "answer": null,
+              "row": 1,
+              "index":1
+            },
+            {
+              "id": 8,
+              "title": "Signed (not electronically)",
+              "control": "checkbox",
+              "answer": null,
+              "row": 2,
+              "index":0
+            },
+            {
+              "id": 10,
+              "title": "Examination according to PCAOB Standards",
+              "control": "checkbox",
+              "answer": null,
+              "row": 3,
+              "index":0
+            },
+            {
+              "id": 11,
+              "title": "3.Opinion on Financial Statements (usually 3rd paragraph):",
+              "control": "checkbox",
+              "answer": null,
+              "row": 4,
+              "index":0
+            },
+            {
+              "id": 12,
+              "title": "-Clean (i.e., financial statements present fairly �.  and no additional disclosure paragraphs)",
+              "control": "checkbox",
+              "answer": null,
+              "row": 5,
+              "index":0
+            },
+            {
+              "id": 13,
+              "title": "-Adverse or Qualified (i.e., financial statements [do not] present fairly � [except for / subject to �] )",
+              "control": "checkbox",
+              "answer": null,
+              "row": 6,
+              "index":0
+            },
+            {
+              "id": 14,
+              "title": "-Additional disclosure paragraphs:",
+              "control": "checkbox",
+              "answer": null,
+              "row": 7,
+              "index":0
+            },
+            {
+              "id": 15,
+              "title": "Going Concern issue",
+              "control": "checkbox",
+              "answer": null,
+              "row": 8,
+              "index":0
+            },
+            {
+              "id": 16,
+              "title": "Other",
+              "control": "checkbox",
+              "answer": null,
+              "row": 9,
+              "index":0
+            },
+            {
+              "id": 17,
+              "title": "-No opinion (i.e., abstention because of scope limitations)",
+              "control": "checkbox",
+              "answer": null,
+              "row": 10,
+              "index":0
+            },
+            {
+              "id": 18,
+              "title": "-Not mentioned at all in the Independent Accountant's Report or in a separate Report",
+              "control": "checkbox",
+              "answer": null,
+              "row": 3,
+              "index":1
+            }
+          ]
+        },
+        {
+          "name": "Financial Statements  (For the Member and Period Ending indicated above)",
+          "included": null,
+          "isVisible": true,
+          "questions": [
+            {
+              "id": 19,
+              "title": "included Statements of:   Financial Condition",
+              "control": "checkbox",
+              "answer": null,
+              "row": 1,
+              "index":0
+            },
+            {
+              "id": 20,
+              "title": "Income (or Operations)",
+              "control": "checkbox",
+              "answer": null,
+              "row": 2,
+              "index":0
+            },
+            {
+              "id": 21,
+              "title": " Changes in Stockholders'/Partners'/Sole Proprietor's Equity",
+              "control": "checkbox",
+              "answer": null,
+              "row": 2,
+              "index":1
+            },
+            {
+              "id": 22,
+              "title": " Cash Flows",
+              "control": "checkbox",
+              "answer": null,
+              "row": 2,
+              "index":2
+            },
+            {
+              "id": 23,
+              "title": "included:   Notes to the Financial Statements",
+              "control": "checkbox",
+              "answer": null,
+              "row": 2,
+              "index":3
+            },
+            {
+              "id": 24,
+              "title": "Note on Net Capital Requirements",
+              "control": "checkbox",
+              "answer": null,
+              "row": 2,
+              "index":4
+            },
+            {
+              "id": 3,
+              "title": "Yes",
+              "control": "checkbox",
+              "answer": null,
+              "row": 2,
+              "index":5
+            },
+            {
+              "id": 3,
+              "title": "No",
+              "control": "checkbox",
+              "answer": null,
+              "row": 2,
+              "index":6
+            }
+          ]
+        },
+        {
+          "name": "Supporting Schedules (For the Member and Period Ending indicated above)",
+          "included": null,
+          "isVisible": true,
+          "questions": [
+            {
+              "id": 1,
+              "title": "included:  Net Capital Computation Schedule (15c3-1) showing net capital and net capital required",
+              "control": "checkbox",
+              "answer": null,
+              "row": 1,
+              "index":0
+            },
+            {
+              "id": 2,
+              "title": "Violations of capital requirements disclosed in Net Capital Computation Schedule",
+              "control": "checkbox",
+              "answer": null,
+              "row": 2,
+              "index":0
+            },
+            {
+              "id": 3,
+              "title": "Yes",
+              "control": "checkbox",
+              "answer": null,
+              "row": 2,
+              "index":1
+            },
+            {
+              "id": 3,
+              "title": "No",
+              "control": "checkbox",
+              "answer": null,
+              "row": 2,
+              "index":2
+            },
+            {
+              "id": 3,
+              "title": "included 15c3-3 Supporting Schedules:  Computation of Reserve Requirements",
+              "control": "checkbox",
+              "answer": null,
+              "row": 2,
+              "index":3
+            },
+            {
+              "id": 3,
+              "title": "Information Relating to Possession or Control Requirements",
+              "control": "checkbox",
+              "answer": null,
+              "row": 2,
+              "index":4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3.15c3-3 Reports",
+      "included": null,
+      "isVisible": true,
+      "subSections": [
+        {
+          "name": "Company Report (For the Member and Period Ending indicated above)",
+          "included": null,
+          "isVisible": true,
+          "questions": [
+            {
+              "id": 1,
+              "title": "included : Compliance Report",
+              "control": "checkbox",
+              "answer": null,
+              "row": 1,
+              "index":0
+            },
+            {
+              "id": 2,
+              "title": "Exemption Report",
+              "control": "checkbox",
+              "answer": null,
+              "row": 2,
+              "index":0
+            },
+            {
+              "id": 3,
+              "title": "Combination",
+              "control": "checkbox",
+              "answer": null,
+              "row": 2,
+              "index":1
+            }
+          ],
+          "row1": {
+            "name": "Compliance Report",
+            "included": null,
+            "isVisible": true,
+            "questions": [
+              {
+                "id": 1,
+                "title": "Includes the four statements required by SEC Rule 17a5",
+                "control": "checkbox",
+                "answer": null,
+                "row": 1,
+                "index":0
+              },
+              {
+                "id": 2,
+                "title": "Exceptions or instances of non-compliance noted",
+                "control": null,
+                "answer": null,
+                "row": 2
+              },
+              {
+                "id": 3,
+                "title": "No",
+                "control": "checkbox",
+                "answer": null,
+                "row": 1,
+                "index":1
+              },
+              {
+                "id": 3,
+                "title": "Yes",
+                "control": "checkbox",
+                "answer": null,
+                "row": 1,
+                "index":2
+              }
+            ]
+          },
+          "row2": {
+            "name": "Exemption Report",
+            "included": null,
+            "isVisible": true,
+            "questions": [
+              {
+                "id": 1,
+                "title": "1. Exemption provisions identified:   ",
+                "control": "checkbox",
+                "answer": null,
+                "row": 2,
+                "index":0 
+
+              },
+              {
+                "id": 2,
+                "title": "k1",
+                "control": "checkbox",
+                "answer": null,
+                "row": 2,
+                "index":0
+              },
+              {
+                "id": 3,
+                "title": "k2(i)",
+                "control": "checkbox",
+                "answer": null,
+                "row": 2,
+                "index":0
+              },
+              {
+                "id": 3,
+                "title": "k2(ii)",
+                "control": "checkbox",
+                "answer": null,
+                "row": 1
+              },
+              {
+                "id": 3,
+                "title": "k3",
+                "control": "checkbox",
+                "answer": null,
+                "row": 2,
+                "index":1
+              },
+              {
+                "id": 3,
+                "title": "Other exemption reasons described",
+                "control": "checkbox",
+                "answer": null,
+                "row": 2
+              },
+              {
+                "id": 1,
+                "title": "2. Exceptions to the exemption provisions/reasons noted   ",
+                "control": "checkbox",
+                "answer": null,
+                "row": 0
+              },
+              {
+                "id": 2,
+                "title": "No",
+                "control": "checkbox",
+                "answer": null,
+                "row": 1
+              },
+              {
+                "id": 3,
+                "title": "Yes",
+                "control": "checkbox",
+                "answer": null,
+                "row": 1
+              },
+              {
+                "id": 3,
+                "title": "Only Prompt Trans.",
+                "control": "checkbox",
+                "answer": null,
+                "row": 1
+              }
+            ]
+          }
+        },
+        {
+          "name": "Independent Accountant's Report",
+          "included": null,
+          "isVisible": true,
+          "questions": [
+            {
+              "id": 1,
+              "title": "1.Refers to the correct 15c3-3 Report (Member Name, Type of Report and Period Ending)",
+              "control": "checkbox",
+              "answer": null,
+              "row": 1,
+              "index":0
+            },
+            {
+              "id": 2,
+              "title": "2.Dated",
+              "control": "checkbox",
+              "answer": null,
+              "row": 2,
+              "index":0
+            },
+            {
+              "id": 3,
+              "title": "City and state indicated",
+              "control": "checkbox",
+              "answer": null,
+              "row": 2,
+              "index":1
+            },
+            {
+              "id": 3,
+              "title": "Signed (not electronically)",
+              "control": "checkbox",
+              "answer": null,
+              "row": 2,
+              "index":2
+            },
+            {
+              "id": 2,
+              "title": "Review according to PCAOB Standards",
+              "control": "checkbox",
+              "answer": null,
+              "row": 2,
+              "index":3
+            },
+            {
+              "id": 3,
+              "title": "No different exemption provisions stated",
+              "control": "checkbox",
+              "answer": null,
+              "row": 2,
+              "index":4
+            },
+            {
+              "id": 2,
+              "title": "Conclusion (3rd paragraph): ",
+              "control": null,
+              "answer": null,
+              "row": 2
+            },
+            {
+              "id": 3,
+              "title": "-Management statements are fairly stated / do not require material modifications (or just repeats management statements)",
+              "control": "checkbox",
+              "answer": null,
+              "row": 2,
+              "index":6
+            },
+            {
+              "id": 3,
+              "title": "-Management statements are not fairly stated /  require modifications ",
+              "control": "checkbox",
+              "answer": null,
+              "row": 2,
+              "index":7
+            },
+            {
+              "id": 2,
+              "title": "Other Prompt Trans.",
+              "control": "checkbox",
+              "answer": null,
+              "row": 2,
+              "index":8
+            },
+            {
+              "id": 3,
+              "title": "-No conclusion on the management statements (i.e., because of scope limitations)",
+              "control": "checkbox",
+              "answer": null,
+              "row": 2,
+              "index":9
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
