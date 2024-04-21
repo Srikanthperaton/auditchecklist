@@ -18,28 +18,32 @@
           "title": "States the correct Member Name; the Date corresponds to Period Ending or later",
           "control": "checkbox",
           "answer": null,
-          "row": 1
+          "row": 1,
+          "Rules":{"isPurple":"true"}
         },
         {
           "id": 2,
           "title": "Signed",
           "control": "checkbox",
           "answer": null,
-          "row": 2
+          "row": 2,
+          "Rules":{"isPurple":"true"}
         },
         {
           "id": 3,
           "title": "Notarized",
           "control": "checkbox",
           "answer": null,
-          "row": 2
+          "row": 2,
+          "Rules":{"isYellow":"true"}
         },
         {
           "id": 4,
           "title": "Includes statement as to why no Independent Accountant's Reports are included",
           "control": "checkbox",
           "answer": null,
-          "row": 3
+          "row": 3,
+          "Rules":{"isPurple":"false"}
         }
       ]
     },
@@ -105,7 +109,7 @@
             },
             {
               "id": 12,
-              "title": "-Clean (i.e., financial statements present fairly �.  and no additional disclosure paragraphs)",
+              "title": "-Clean (i.e., financial statements present fairly.  and no additional disclosure paragraphs)",
               "control": "checkbox",
               "answer": null,
               "row": 5,
@@ -113,7 +117,7 @@
             },
             {
               "id": 13,
-              "title": "-Adverse or Qualified (i.e., financial statements [do not] present fairly � [except for / subject to �] )",
+              "title": "-Adverse or Qualified (i.e., financial statements [do not] present fairly [except for / subject to] )",
               "control": "checkbox",
               "answer": null,
               "row": 6,

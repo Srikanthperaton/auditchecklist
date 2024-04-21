@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Question, QuestionComponent } from "./Question";
+import { Question, QuestionComponent, Rule } from "./Question";
 
 interface RowSection {
   name: string;
@@ -23,7 +23,12 @@ interface SubSectionProps {
 
 export const SubSectionComponent: React.FC<
   SubSectionProps & {
-    handleChange: (uniqueId: string, value: any) => void;
+    handleChange: (
+      uniqueId: string,
+      value: any,
+      id: number,
+      Rules: Rule
+    ) => void;
     formData: any;
     parentSectionName: string;
   }
@@ -45,26 +50,40 @@ export const SubSectionComponent: React.FC<
     });
   };
 
-  const groupQuestionsByRow = (questions: Question[]) => {
+  type GroupQuestionByRow = (questions: Question[]) => {
+    [key: string]: Question[];
+  };
+
+  const groupQuestionsByRow: GroupQuestionByRow = (questions: Question[]) => {
     if (!Array.isArray(questions)) {
-      return {};
+      return {} as {
+        [key: string]: Question[];
+      };
     }
 
-    return questions.reduce((groupedQuestions, question) => {
-      const { row } = question;
-      if (!groupedQuestions[row]) {
-        groupedQuestions[row] = [];
+    return questions.reduce(
+      (groupedQuestions, question) => {
+        const { row } = question;
+        if (!groupedQuestions[row]) {
+          groupedQuestions[row] = [];
+        }
+        groupedQuestions[row].push(question);
+        return groupedQuestions;
+      },
+      {} as {
+        [key: string]: Question[];
       }
-      groupedQuestions[row].push(question);
-      return groupedQuestions;
-    }, {});
+    );
   };
-const questionGroupStyle =
+  const questionGroupStyle =
     "bg-gray-100 p-2 mt-3 border border-gray-300 rounded-lg";
   const renderDirectQuestions = () => {
     const groupedQuestions = groupQuestionsByRow(subSection.questions);
     return Object.entries(groupedQuestions).map(([rowNumber, questions]) => (
-      <div key={`row-${rowNumber}`} className={`question-group ${questionGroupStyle}`}>
+      <div
+        key={`row-${rowNumber}`}
+        className={`question-group ${questionGroupStyle}`}
+      >
         {questions.map((question, questionIndex) => {
           const uniqueKey = `section-${parentSectionName}-subsection-${subSection.name}-row-${rowNumber}-question-${question.id}-${questionIndex}`;
           return (
@@ -82,7 +101,7 @@ const questionGroupStyle =
   };
 
   const renderSubSectionRows = () => {
-    return Object.entries(subSection)
+    return Object.entries(subSection as SubSection)
       .filter(
         ([key, value]) =>
           key.startsWith("row") && (value as RowSection).questions
@@ -97,18 +116,23 @@ const questionGroupStyle =
             className="row-section mt-2 p-3 bg-white rounded-md shadow-sm"
           >
             <div className="flex items-center mb-2">
+              <h4 className="text-md font-semibold text-gray-800">
+                {(rowValue as RowSection).name}
+              </h4>
+              &nbsp;&nbsp;
               <input
                 type="checkbox"
                 checked={expandedRows[rowKey] || false}
                 onChange={() => toggleRow(rowKey)}
-                className="form-checkbox h-5 w-5 text-blue-600 mr-2"
+                className="form-checkbox  theme-controller h-4 w-4"
               />
-              <h4 className="text-md font-semibold text-gray-800">
-                {rowValue.name}
-              </h4>
             </div>
             {expandedRows[rowKey] &&
-              Object.entries(groupedQuestions).map(([rowNumber, questions]) => (
+              Object.entries(
+                groupedQuestions as {
+                  [key: string]: Question[];
+                }
+              ).map(([rowNumber, questions]) => (
                 <div key={rowNumber} className="question-group">
                   {questions.map((question, questionIndex) => {
                     const uniqueKey = `section-${parentSectionName}-subsection-${subSection.name}-${rowKey}-question-${question.id}-${questionIndex}`;
@@ -134,15 +158,16 @@ const questionGroupStyle =
   return (
     <div className="subsection mt-4 p-4 border border-gray-300 rounded-lg bg-gray-50">
       <div className="flex items-center mb-2">
+        <h3 className="text-md font-semibold text-blue-700">
+          {subSection.name}
+        </h3>
+        &nbsp;&nbsp;
         <input
           type="checkbox"
           checked={isExpanded}
           onChange={handleToggle}
-          className="form-checkbox h-5 w-5 text-blue-600 mr-2"
+          className="form-checkbox theme-controller h-4 w-4"
         />
-        <h3 className="text-md font-semibold text-blue-700">
-          {subSection.name}
-        </h3>
       </div>
       {isExpanded && (
         <div>

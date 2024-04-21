@@ -1,27 +1,36 @@
 import React, { useState } from "react";
-import { Question, QuestionComponent } from "./Question";
+import { Question, QuestionComponent, Rule } from "./Question";
 import { SubSection, SubSectionComponent } from "./SubSection";
 
 export interface Section {
   name: string;
   included: string | null;
   isVisible: boolean;
-  questions?: Question[];
+  questions: Question[];
   subSections?: SubSection[];
 }
 
 interface SectionProps {
   section: Section;
   sectionId: string;
+  handleChange: (uniqueId: string, value: any, id: number, Rules: Rule) => void;
+  formData: {
+    [key: string]: {
+      value: string | boolean;
+      isValid: boolean;
+      id: number;
+      Rules: Rule;
+    };
+  };
+  resetSectionFormData: (sectionName: string) => void;
 }
 
-export const SectionComponent: React.FC<
-  SectionProps & {
-    handleChange: (uniqueId: string, value: any) => void;
-    formData: any;
-    resetSectionFormData: (sectionName: string) => void;
-  }
-> = ({ section, handleChange, formData, resetSectionFormData }) => {
+export const SectionComponent: React.FC<SectionProps> = ({
+  section,
+  handleChange,
+  formData,
+  resetSectionFormData,
+}) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const handleToggle = () => {
@@ -40,8 +49,10 @@ export const SectionComponent: React.FC<
           type="checkbox"
           checked={isExpanded}
           onChange={handleToggle}
-          className="form-checkbox h-5 w-5 text-blue-600 mr-2"
+          //className="form-checkbox h-5 w-5 text-blue-600 mr-2"
+          className="form-checkbox theme-controller h-4 w-4"
         />
+        &nbsp;&nbsp;
         <h2 className="text-lg font-semibold text-gray-700">{section.name}</h2>
       </div>
       {isExpanded && (

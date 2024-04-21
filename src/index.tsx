@@ -1,22 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+/* eslint-disable no-unused-vars*/
+/* eslint eqeqeq: "off", curly: "error" -- Here's a description about why this configuration is necessary. */
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 import { msalConfig } from "./auth-config";
-import { EventType, PublicClientApplication } from '@azure/msal-browser';
-import { MsalProvider } from '@azure/msal-react';
-
-const msInstance = new PublicClientApplication( msalConfig );
+import { EventType, PublicClientApplication } from "@azure/msal-browser";
+import { MsalProvider } from "@azure/msal-react";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./Routes/Routes";
+//  eslint-disable react/no-direct-mutation-state
+const msInstance = new PublicClientApplication(msalConfig);
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 
 /**
-* MSAL should be instantiated outside of the component tree to prevent it from being re-instantiated on re-renders.
-* For more, visit: https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-react/docs/getting-started.md
-*/
+ * MSAL should be instantiated outside of the component tree to prevent it from being re-instantiated on re-renders.
+ * For more, visit: https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-react/docs/getting-started.md
+ */
 const msalInstance = new PublicClientApplication(msalConfig);
 
 // Default to using the first account if no account is active on page load
@@ -35,9 +39,10 @@ const msalInstance = new PublicClientApplication(msalConfig);
 // });
 root.render(
   <React.StrictMode>
-    <MsalProvider instance={msInstance}>
-      <App instance={ msalInstance } />
-      </MsalProvider>
+    {/* <MsalProvider instance={msInstance}> */}
+    {/* <App instance={msalInstance} /> */}
+    <RouterProvider router={router} />
+    {/* </MsalProvider> */}
   </React.StrictMode>
 );
 

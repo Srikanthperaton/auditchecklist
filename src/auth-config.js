@@ -9,8 +9,8 @@ export const msalConfig = {
   auth: {
     clientId: "9f3736e4-9ecf-4cf3-ba1a-fbb732898b17", // This is the ONLY mandatory field that you need to supply.
     authority: "https://login.microsoftonline.us/vencoredev.onmicrosoft.com",
-    redirectUri: "https://auditreporttooldev.azurewebsites.us/", // You must register this URI on Azure Portal/App Registration. Defaults to window.location.origin
-    //redirectUri: "http://localhost:3000",
+    //redirectUri: "https://auditreporttooldev.azurewebsites.us/", // You must register this URI on Azure Portal/App Registration. Defaults to window.location.origin
+    redirectUri: "http://localhost:3000",
     postLogoutRedirectUri: "/", // Indicates the page to navigate after logout.
     navigateToLoginRequestUrl: false, // If "true", will navigate back to the original request location before processing the auth code response.
   },
